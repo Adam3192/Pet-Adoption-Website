@@ -1,0 +1,11 @@
+<h1>Job Experience</h1>
+<ul>
+    {{#each jobList}}
+    <li>
+        {{jobTitle}} | {{companyName}}
+        <a href="/jobs/{{jobId}}">View Details</a>
+    </li>
+    {{/each}}
+</ul>
+
+<a href="/jobs/new">Add New Job</a>

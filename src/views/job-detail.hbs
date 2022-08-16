@@ -1,0 +1,6 @@
+<h1>{{foundJob.jobTitle}}, {{foundJob.companyName}}</h1>
+<p>{{foundJob.yearsWorked}} years</p>
+<p>{{foundJob.description}}</p>
+<form action="/jobs/delete/{{foundJob.jobId}}" method="POST">
+   <button type="submit">Delete Job</button>
+</form>
