@@ -11,7 +11,7 @@ const db = mysql_1.default.createConnection({
     port: 3306,
     user: 'sqluser',
     password: 'password',
-    database: `mydb`
+    database: `petDB`
 });
 db.connect((err) => {
     if (err) {

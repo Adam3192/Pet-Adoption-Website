@@ -1,21 +1,27 @@
 import { Router } from 'express';
-import { getAllJobs, getJobById, addJobPage, createJob, deleteJob } from '../controllers/jobsController';
+import { getAllPets, addPetPage, createPet, deletePet, getPetById, editPet, editPetPage } from '../controllers/petsController';
 
 const router = Router();
 
-// GET /jobs - renders a list of all jobs
-router.get('/', getAllJobs);
+// GET /pets - renders a list of all pets
+router.get('/', getAllPets);
 
-// GET /jobs/new - renders an add job page
-router.get('/new', addJobPage);
+// GET /pets/new - renders an add pet page
+router.get('/new', addPetPage);
 
-// POST /jobs/new - creates new job
-router.post('/new', createJob);
+// POST /pets/new - creates new pet
+router.post('/new', createPet);
 
-// POST /jobs/delete/:jobId - deletes a job
-router.post('/delete/:jobId', deleteJob);
+// GET /pets/edit/:petId - render the edit pet page
+router.get('/edit/:petId', editPetPage);
 
-// GET /jobs/:jobId - render the job requested
-router.get('/:jobId', getJobById);
+// POST /pets/edit/:petId - updates a pet
+router.post('/edit/:petId', editPet);
+
+// POST /pets/delete/:petId - deletes a pet
+router.post('/delete/:petId', deletePet);
+
+// GET /pets/:petId - render the pet requested
+router.get('/:petId', getPetById);
 
 export default router;

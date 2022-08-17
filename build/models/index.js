@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.db = void 0;
 const sequelize_1 = require("sequelize");
-const Job_1 = require("./Job");
-const dbName = 'myOrmDb';
+const Pet_1 = require("./Pet");
+const dbName = 'petDB';
 const username = 'sqluser';
 const password = 'password';
 const sequelize = new sequelize_1.Sequelize(dbName, username, password, {
@@ -11,5 +11,5 @@ const sequelize = new sequelize_1.Sequelize(dbName, username, password, {
     port: 3306,
     dialect: 'mysql'
 });
-(0, Job_1.JobFactory)(sequelize);
+(0, Pet_1.PetFactory)(sequelize);
 exports.db = sequelize;

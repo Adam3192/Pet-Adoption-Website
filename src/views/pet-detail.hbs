@@ -1,0 +1,12 @@
+<h1>{{foundPet.petName}}, {{foundPet.description}}</h1>
+<p>{{foundPet.description}}</p>
+<p>{{foundPet.description}}</p>
+<form action="/pets/delete/{{foundPet.petId}}" method="POST">
+   <button type="submit">Delete Pet</button>
+</form>
+
+<br>
+
+<form action="/pets" method="GET">
+   <button type="submit">Back</button>
+</form>

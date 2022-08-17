@@ -7,3 +7,7 @@ body {
 a {
  color: #0051ff;
 }
+
+ul {
+ list-style: none; /* Remove default bullets */
+}

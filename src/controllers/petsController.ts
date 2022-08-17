@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
-import { Job } from "../models/Job";
 import mysql, { FieldInfo, MysqlError } from 'mysql';
+import { Pet } from "../models/Pet";
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -22,44 +22,75 @@ export const defaultPets: RequestHandler = (req, res, next) => {
     res.redirect('/pets');
 }
 
-export const getAllJobs: RequestHandler = async (req, res, next) => {
-    let jobList: Job[] = await Job.findAll();
-    res.render('all-jobs', { jobList });
+export const getAllPets: RequestHandler = async (req, res, next) => {
+    let petList: Pet[] = await Pet.findAll();
+    res.render('all-pets', { petList });
 }
 
-export const getJobById: RequestHandler = async (req, res, next) => {
-    let jobId = req.params.jobId;
-    let foundJob: Job | null = await Job.findByPk(jobId);
+export const getPetById: RequestHandler = async (req, res, next) => {
+    let petId = req.params.petId;
+    let foundPet: Pet | null = await Pet.findByPk(petId);
 
-    if (foundJob) {
-        res.render('job-detail', { foundJob });
+    if (foundPet) {
+        res.render('pet-detail', { foundPet });
     }
     else {
-        res.status(404).render('error', { message: 'job not found' });
+        res.status(404).render('error', { message: 'pet not found' });
     }
 }
 
-export const addJobPage: RequestHandler = (req, res, next) => {
-    res.render('addJob');
+export const addPetPage: RequestHandler = (req, res, next) => {
+    res.render('addPet');
 }
 
-export const createJob: RequestHandler = async (req, res, next) => {
-    let newJob: Job = req.body;
-    await Job.create(newJob);
-    res.redirect('/jobs');
+export const createPet: RequestHandler = async (req, res, next) => {
+    let newPet: Pet = req.body;
+    await Pet.create(newPet);
+    res.redirect('/pets');
 }
 
-export const deleteJob: RequestHandler = async (req, res, next) => {
-    let jobId = req.params.jobId;
+export const deletePet: RequestHandler = async (req, res, next) => {
+    let petId = req.params.petId;
 
-    let deletedJob = await Job.destroy({
-        where: { jobId: jobId }
+    let deletedPet = await Pet.destroy({
+        where: { petId: petId }
     });
 
-    if (deletedJob) {
-        res.redirect('/jobs')
+    if (deletedPet) {
+        res.redirect('/pets')
     }
     else {
-        res.status(404).render('error', { message: 'Cannot find job' });
+        res.status(404).render('error', { message: 'Cannot find pet' });
     }
 }
+
+export const editPetPage: RequestHandler = async (req, res, next) => {
+    let petId = req.params.petId;
+    let pet: Pet | null = await Pet.findOne({
+        where: { petId: petId }
+    });
+
+    if (pet) {
+        res.render('edit-pet', { foundPet: pet });
+    }
+    else {
+        res.status(404).render('error', { message: 'pet not found' });
+    }
+}
+
+export const editPet: RequestHandler = async (req, res, next) => {
+    let petId = req.params.petId;
+    let updatedPet: Pet = req.body;
+
+    let [updated] = await Pet.update(updatedPet, {
+        where: { petId: petId }
+    });
+
+    if (updated === 1) {
+        res.redirect('/pets');
+    }
+    else {
+        res.render('error', { message: 'Pet could not be updated' });
+    }
+}
+
