@@ -1,12 +1,15 @@
 <h1>Pet Adoption</h1>
 <ul>
-    {{#each petList}}
+  {{#each petList}}
     <li>
-        <img src="{{imgUrl}}" alt="lab puppy"> | {{petName}}
-        <a href="/pets/{{petId}}">View Pet</a>
-        <a href="/pets/edit/{{petId}}">Edit Pet</a>
+      <img src='{{imgUrl}}' alt='pet image' />
+      <div class="alignItems">
+        <h2>{{petName}}</h2>
+        <a href='/pets/{{petId}}'>View Pet</a>
+        <a href='/pets/edit/{{petId}}'>Edit Pet</a>
+      </div>
     </li>
-    {{/each}}
+  {{/each}}
 </ul>
 
-<a href="/pets/new">Add New Pet</a>
+<a href='/pets/new'>Add New Pet</a>
