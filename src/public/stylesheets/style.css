@@ -56,11 +56,9 @@ img {
  }
 
  .button1 {
-  /* background-color: #3db0e6;  */
   background-color: #b8f3ff; 
   border-radius: 10px;
-  border: 1px solid #554971;
-  /* border: 2px solid #30e304; */
+  border: 2px solid #673ab7;
   color: black;
   padding: 10px;
   text-align: center;
@@ -72,9 +70,9 @@ img {
 }
 
 .button2 {
-  background-color: #3db0e6; 
+  background-color: #b8f3ff; 
   border-radius: 10px;
-  border: 2px solid #30e304;
+  border: 2px solid #673ab7;
   color: black;
   padding: 5px;
   text-align: center;
