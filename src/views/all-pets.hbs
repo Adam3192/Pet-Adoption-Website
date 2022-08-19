@@ -1,7 +1,4 @@
 <h1 id='center'>Pet Adoption</h1>
-<form class="center" action='/pets/new' method='GET'>
-  <button type='submit'>Add New Pet</button>
-</form>
 <ul>
   {{#each petList}}
     <li>
@@ -12,9 +9,13 @@
         <a href='/pets/edit/{{petId}}'>Edit Pet</a>
         <br />
         <form action='/pets/delete/{{petId}}' method='POST'>
-          <button type='submit'>Delete Pet</button>
+          <button class="button2" type='submit'>Delete Pet</button>
         </form>
       </div>
     </li>
   {{/each}}
 </ul>
+
+<form class="center" action='/pets/new' method='GET'>
+  <button class="button1" type='submit'>Add New Pet</button>
+</form>

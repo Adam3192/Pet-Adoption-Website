@@ -1,9 +1,9 @@
-<img src='{{foundPet.imgUrl}}' alt='pet image' />
+<img id="bigImage" src='{{foundPet.imgUrl}}' alt='pet image' />
 <h1>{{foundPet.petName}}</h1>
 <p>{{foundPet.description}}</p>
 <form class="displayInline" action="/pets/delete/{{foundPet.petId}}" method="POST">
-   <button type="submit">Delete Pet</button>
+   <button class="button2" type="submit">Delete Pet</button>
 </form>
 <form class="displayInline" action="/pets" method="GET">
-   <button type="submit">Back</button>
+   <button class="button2" type="submit">Back</button>
 </form>
