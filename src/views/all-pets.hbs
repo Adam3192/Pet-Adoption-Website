@@ -5,7 +5,7 @@
       <img src='{{imgUrl}}' alt='pet image' />
       <div class='alignItems'>
         <h2>{{petName}}</h2>
-        <a href='/pets/{{petId}}'>View Pet</a>
+        <a style="margin-bottom: 10px;" href='/pets/{{petId}}'>View Pet</a>
         <a href='/pets/edit/{{petId}}'>Edit Pet</a>
         <br />
         <form action='/pets/delete/{{petId}}' method='POST'>
