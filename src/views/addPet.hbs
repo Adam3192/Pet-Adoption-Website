@@ -1,25 +1,32 @@
-<h1>Add a New Pet</h1>
-<form class="displayInline" action='/pets/new' method='POST'>
-  <label for='petName'>Enter Pet Name: </label>
-  <input type='text' name='petName' placeholder='Enter Pet Name' /><br />
-<br>
-  <label for='description'>Enter Pet Description: </label>
-  <input
-    type='text'
-    name='description'
-    placeholder='Enter Pet Description'
-  /><br />
-<br>
-  <label for='imgUrl'>Enter a URL for the Pet's Image: </label>
-  <input
-    type='text'
-    name='imgUrl'
-    placeholder="Enter a URL for the Pet's Image"
-  /><br />
-  <br />
-  <button class="button2" type='submit'>Add Pet</button>
-</form>
+<div style='display: flex; justify-content: center;'>
+  <div style='margin-top: 200px; margin-right: 100px;'>
 
-<form class="displayInline" action="/pets" method="GET">
-   <button class="button2" type="submit">Back</button>
-</form>
+    <h1 style='font-size: 45px;'>Add a New Pet</h1>
+    <form class='displayInline' action='/pets/new' method='POST'>
+      <label style='font-size: 15px;' for='petName'>Enter Pet Name: </label>
+      <input type='text' name='petName' placeholder='Enter Pet Name' /><br />
+      <br />
+      <label style='font-size: 15px;' for='description'>Enter Pet Description: </label>
+      <input
+        type='text'
+        name='description'
+        placeholder='Enter Pet Description'
+      /><br />
+      <br />
+      <label style='font-size: 15px;' for='imgUrl'>Enter a URL for the Pet's Image: </label>
+      <input
+        type='text'
+        name='imgUrl'
+        placeholder="Enter a URL for the Pet's Image"
+      /><br />
+      <br />
+      <button class='button2' type='submit'>Add Pet</button>
+    </form>
+
+    <form class='displayInline' action='/pets' method='GET'>
+      <button class='button2' type='submit'>Back</button>
+    </form>
+
+  </div>
+
+</div>

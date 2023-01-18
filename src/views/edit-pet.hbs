@@ -1,18 +1,46 @@
-<h1>Edit Pet</h1>
-{{#with foundPet}}
-<form action='/pets/edit/{{petId}}' method="POST">
-    <label for="petName">Enter Pet Name: </label>
-    <input type="text" name="petName" placeholder="Enter Name"
-        value="{{petName}}"/><br>
-<br>
-    <label for="description">Enter Pet Description: </label>
-    <input type="text" name="description" placeholder="Enter Description"
-        value="{{description}}" /><br>
-<br>
-    <label for="imgUrl">Enter Pet Image URL: </label>
-    <input type="text" name="imgUrl" placeholder="Enter Image URL"
-        value="{{imgUrl}}" /><br>
-<br>
-    <button class="button2" type="submit">Edit Pet</button>
-</form>
-{{/with}}
+<div style='display: flex; justify-content: center;'>
+
+  <div style='margin-top: 200px; margin-right: 100px;'>
+
+    <h1 style='font-size: 45px;'>Edit Pet</h1>
+    {{#with foundPet}}
+      <form action='/pets/edit/{{petId}}' method='POST'>
+        <label style='font-size: 15px;' for='petName'>Enter Pet Name: </label>
+        <input
+          type='textarea'
+          name='petName'
+          placeholder='Enter Name'
+          value='{{petName}}'
+        /><br />
+        <br />
+        <label style='font-size: 15px;' for='description'>Enter Pet Description:
+        </label>
+        <input
+          style="width: 222px;"
+          type='textarea'
+          name='description'
+          placeholder='Enter Description'
+          value='{{description}}'
+        /><br />
+        <br />
+        <label style='font-size: 15px;' for='imgUrl'>Enter Pet Image URL:
+        </label>
+        <input
+          type='text'
+          name='imgUrl'
+          placeholder='Enter Image URL'
+          value='{{imgUrl}}'
+        /><br />
+        <br />
+        <button style="margin-top: 25px; margin-right: 3px" class='button2' type='submit'>Save Changes</button>
+
+        <form class='displayInline' action='/pets' method='GET'>
+          <button class='button2' type='submit'>Back</button>
+        </form>
+
+      </form>
+
+    {{/with}}
+
+  </div>
+</div>

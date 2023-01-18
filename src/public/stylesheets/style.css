@@ -19,7 +19,7 @@ ul {
 img {
   width: 225px;
   height: 300px;
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 
 .alignItems {
@@ -70,6 +70,20 @@ img {
 }
 
 .button2 {
+  background-color: #b8f3ff; 
+  border-radius: 10px;
+  border: 2px solid #673ab7;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button3 {
   background-color: #b8f3ff; 
   border-radius: 10px;
   border: 2px solid #673ab7;

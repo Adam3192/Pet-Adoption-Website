@@ -1,9 +1,22 @@
-<img id="bigImage" src='{{foundPet.imgUrl}}' alt='pet image' />
-<h1>{{foundPet.petName}}</h1>
-<p>{{foundPet.description}}</p>
-<form class="displayInline" action="/pets/delete/{{foundPet.petId}}" method="POST">
-   <button class="button2" type="submit">Delete Pet</button>
-</form>
-<form class="displayInline" action="/pets" method="GET">
-   <button class="button2" type="submit">Back</button>
-</form>
+<div style='display: flex; flex-direction:column; align-items:center'>
+
+  <img id='bigImage' src='{{foundPet.imgUrl}}' alt='pet image' />
+  <h1>{{foundPet.petName}}</h1>
+  <p style='font-size: large;'>{{foundPet.description}}</p>
+
+  <div>
+
+    <form
+      class='displayInline'
+      action='/pets/delete/{{foundPet.petId}}'
+      method='POST'
+    >
+      <button class='button2' type='submit'>Delete Pet</button>
+    </form>
+    <form class='displayInline' action='/pets' method='GET'>
+      <button class='button2' type='submit'>Back</button>
+    </form>
+
+  </div>
+
+</div>

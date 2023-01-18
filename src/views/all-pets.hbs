@@ -3,19 +3,24 @@
   {{#each petList}}
     <li>
       <img src='{{imgUrl}}' alt='pet image' />
-      <div class='alignItems'>
+      <div style="margin-left: 10px;" class='alignItems'>
         <h2>{{petName}}</h2>
-        <a style="margin-bottom: 10px;" href='/pets/{{petId}}'>View Pet</a>
-        <a href='/pets/edit/{{petId}}'>Edit Pet</a>
-        <br />
-        <form action='/pets/delete/{{petId}}' method='POST'>
-          <button class="button2" type='submit'>Delete Pet</button>
-        </form>
+
+        <div style='display: flex; flex-direction: column'>
+
+          <a class='button3' href='/pets/{{petId}}'>View Pet</a>
+          <a class='button3' href='/pets/edit/{{petId}}'>Edit Pet</a>
+          <form action='/pets/delete/{{petId}}' method='POST'>
+            <button class='button2' type='submit'>Delete Pet</button>
+          </form>
+
+        </div>
+
       </div>
     </li>
   {{/each}}
 </ul>
 
-<form class="center" action='/pets/new' method='GET'>
-  <button class="button1" type='submit'>Add New Pet</button>
+<form class='center' action='/pets/new' method='GET'>
+  <button class='button1' type='submit'>Add New Pet</button>
 </form>
