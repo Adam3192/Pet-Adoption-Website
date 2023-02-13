@@ -2,22 +2,6 @@ import { RequestHandler } from "express";
 import mysql, { FieldInfo, MysqlError } from 'mysql';
 import { Pet } from "../models/Pet";
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'sqluser',
-    password: 'password',
-    database: `petDB`
-});
-
-db.connect((err: MysqlError) => {
-    if (err) {
-        console.error('error connecting: ' + err.stack);
-        return;
-    }
-    console.log('connected as id ' + db.threadId);
-});
-
 export const defaultPets: RequestHandler = (req, res, next) => {
     res.redirect('/pets');
 }
